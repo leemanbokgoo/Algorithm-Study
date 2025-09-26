@@ -1,5 +1,4 @@
 from typing import List
-from problem.isPalindrome import ListNode
 # 두 수의 덧셈
 # 역순으로 저장된 연결 리스트의 숫자를 더하라.
 
