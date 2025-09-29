@@ -1,6 +1,5 @@
 # 두 정렬 리스트의 병합
 # 장렬 되어 있는 두 연결 리스트를 합쳐라
-from problem.isPalindrome import ListNode
 
 class ListNode:
     def __init__(self, val=0, next=None):

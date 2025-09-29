@@ -6,7 +6,7 @@ from typing import List
 # 왜냐하면 페어의 첫 번째 숫자가 항상 작은 값이 된다. 이렇게 하면 항상 가장 작은 값을 고르게 되어 손실을 최소화하고, 결과적으로 합을 최대로 만들 수 있다.
 
 # [ 풀이 1 ] 오름차순 풀이
-def arrayPariSum(nums : List[int]) -> int :
+def arrayPairSum(nums : List[int]) -> int :
     sum = 0
     pair = []
     nums.sort()
@@ -25,7 +25,7 @@ def arrayPariSum(nums : List[int]) -> int :
 
 # [ 풀이 2 ] 짝수 번째 값 계산
 # 정렬 된 상태에서는 짝수번쨰에 항상 작은 값이 위치한다.
-def arrayPariSum2(nums : List[int]) -> int :
+def arrayPairSum(nums : List[int]) -> int :
     sum = 0
     nums.sort()
 
@@ -37,7 +37,7 @@ def arrayPariSum2(nums : List[int]) -> int :
 
 # [ 풀이 3 ] 파이썬 다운 방식
 # 슬라이싱을 활용하면 한줄로도 풀이가 가능
-def arrayPariSum3(nums : List[int]) -> int :
+def arrayPairSum(nums : List[int]) -> int :
     #[::2]는 2칸씩 건너뛰므로 짝수번째를 계산하는 것과 동일하다.
     return sum(sorted(nums)[::2])
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # 출력 4
     # n은 2가 되며 최대합은 4이다.
     # min(1,2) + min(3,4) = 4
-    print(f"arrayPariSum : {arrayPariSum(nums)}")
-    print(f"arrayPariSum2 : {arrayPariSum2(nums)}")
-    print(f"arrayPariSum3 : {arrayPariSum3(nums)}")
+    print(f"arrayPairSum : {arrayPairSum(nums)}")
+    print(f"arrayPairSum2 : {arrayPairSum(nums)}")
+    print(f"arrayPairSum3 : {arrayPairSum(nums)}")
 
