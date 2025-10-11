@@ -48,12 +48,19 @@ def letterCombinations(digits : str ) -> List[str]:
                 # 다음 깊이의 노드에서 j는 d,e,f가 되는 것이다. 그렇게 깊이가 한단계씩 깊어지는 이유는 i + 1를 해서 depth를 + 1씩 해주기 때문이다.
                 dfs(i + 1, path + j)
 
+    # 보통 백트래킹에서는 잘못된 선택지를 고른 경우, 상태를 복원한다. 그러나 해당 코드의 경우 재귀 함수가 종료되면 (Base Case 도달 후 return 또는 루프 완료 후 return),
+    # 함수가 path 자체를 변경하는 대신 새로운 문자열을 전달했기 때문에, 원래의 path는 변경되지 않고 자동으로 이전 상태가 복원된다. (즉, 명시적인 path.pop() 코드가 필요 없음.
+    # 새로운 문자열을 전달하는 방식으로 명시적인 '선택 취소 (Backtrack)' 코드 없이도 백트래킹이 구현되는 이유는 파이썬에서 문자열(String)이 불변(Immutable) 객체이기때문이다.
+    # 재귀 호출이 종료되어 (Base Case 도달 후 return) 최초의 호출 함수로 되돌아왔을 때, 함수의 지역 변수였던 path는 여전히 변경되지 않은 원래의 문자열을 가리킨다.
+
+    # 예외 처리
     if not digits:
         return []
 
     # 문제에서 주어지는 키판 배열
     dic = {"2" : "abc", "3" : "def", "4" : "ghi", "5" : "jkl", "6" : "mno", "7" : "pqrs", "8" : "tuv", "9" : "wxyz" }
-    result = []
+    result = [] # 결과 리스트 초기화
+    # 백트래킹 탐색 시작
     dfs(0,"")
 
     return result

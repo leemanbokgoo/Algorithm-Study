@@ -453,45 +453,73 @@ print(bfs_queue(graph, 1))  # 1 이 시작노드입니다!
     - 명시적 스택 (비선호): 명시적 스택을 사용할 경우, 노드를 꺼낸 후 **탐색 과정에서 변경된 모든 상태(예: 방문 표시, 누적된 결과값 등)**를 개발자가 직접 코드로 **복원**해줘야한다. 이 로직이 매우 복잡하고 오류를 유발하기 쉽다. 
 - 다만 재귀 함수로 구현 시 재귀 호출의 깊이가 너무 깊으면 에러가 발생할 수 있다. 이 부분을 신경써야하지만 대부분의 코딩 테스트나 알고리즘 문제에서 백트래킹은 재귀 깊이가 깊지 않은 문제로 출제되므로, 재귀 함수를 사용하는 것이 가장 일반적인 해결책이다.
 
+### 백트래킹 템플릿 코드 예시 
+```
+result = [] # 최종 해답을 저장할 리스트
+
+def backtrack(path, choices, ...): # ...은 문제에 따라 필요한 추가 인자 (ex. 인덱스, 목표값)
+    # 1. 종료 조건 (Base Case): 현재 path가 하나의 유효한 해답일 때
+    if is_solution(path, ...):
+        # 해답을 저장하고 함수 종료
+        result.append(list(path))
+        return
+    
+    # 2. 가능한 '선택' 목록 순회
+    for choice in choices:
+        
+        # 3. 가지치기 (Pruning): 선택이 제약 조건을 만족하는지 확인
+        # 현재 선택이 유효하지 않으면, 이 선택을 포함하는 경로는 탐색하지 않고 다음 choice로 넘어감
+        if is_valid(path, choice, ...):
+            
+            # 4. 선택 (Make a move)
+            path.append(choice) # 현재 선택을 path에 추가 (상태 변화)
+            
+            # 5. 다음 단계 탐색 (Explore)
+            # 재귀 호출 시, 다음 단계의 choices 또는 시작 인덱스를 전달
+            backtrack(path, updated_choices, ...)
+            
+            # 6. 선택 취소 (Undo the move / Backtrack)
+            path.pop() # 다음 choice를 시도하기 위해 상태를 이전으로 되돌림 (핵심)
 
 ```
-# N과 M (1) - 1부터 N까지 중복 없이 M개를 고른 순열 구하기 예시
-N = 4  # 전체 원소의 개수
-M = 2  # 선택할 원소의 개수
 
-# 결과 저장을 위한 리스트
+### 백트래킹 문제 예시 코드 
+- N개의 숫자 중 M개를 고르는 순열 문제
+- 주어진 N개의 서로 다른 원소 중에서 M개의 원소를 뽑아 순서대로 나열하는 모든 경우의 수(순열)를 찾는 것.
+  - 만약 N개의 숫자 [1,2,3] 중 M = 2개를 고른다면 [1,2], [1,3] 이런 식으로 순열을 선택하여 6가지 경우를 만들 수 있다. 
+
+```
+
+N, M = 3, 2 # 예: [1, 2, 3] 중 2개를 고르는 순열
+nums = [1, 2, 3]
 result = []
-# 방문 여부를 체크하는 배열 (순열에서 중복 방지용)
-visited = [False] * (N + 1)  # 1부터 N까지 사용하므로 크기를 N+1로 설정
 
-def backtracking():
-    # 1. 종료 조건 (Base Case): M개의 원소를 모두 선택했을 때
-    if len(result) == M:
-        print(' '.join(map(str, result)))
+def backtrack_permutation(path):
+    # 1. 종료 조건: M개의 숫자를 모두 골랐을 때
+    if len(path) == M:
+        result.append(list(path))
         return
 
-    # 2. 재귀 호출 (Recursive Call)
-    for i in range(1, N + 1):  # 1부터 N까지의 숫자 탐색
-        # 3. 유망성 검사 (Constraint Check): 이미 사용한 숫자라면 건너뜀
-        if not visited[i]:
-            # **상태 변경 (Do)**
-            result.append(i)
-            visited[i] = True
+    # 2. 가능한 '선택' 목록 순회 (모든 nums의 원소)
+    for i in range(len(nums)):
+        choice = nums[i]
+        
+        # 3. 가지치기: 이미 path에 포함된 숫자는 중복 선택 불가 (순열)
+        if choice in path:
+            continue
+            
+        # 4. 선택 및 5. 탐색
+        path.append(choice) 
+        backtrack_permutation(path)
+        
+        # 6. 선택 취소
+        path.pop()
 
-            # 다음 단계로 재귀 호출
-            backtracking()
-
-            # **상태 복구 (Undo / Backtrack)**
-            # 현재 경로를 탐색 완료했으므로, 다음 탐색을 위해 상태를 되돌림
-            result.pop()
-            visited[i] = False
-
-# 함수 실행
-# backtracking()
+# backtrack_permutation([])
+# print(result) # [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 ```
 
-- 가장 대표적인 예제인 **N과 M 문제 (순열/조합 구하기)**를 위한 템플릿 코드. 
-- **재귀 함수 (DFS)**를 사용해 깊이를 탐색하며, 유망한지를 판단하는 **조건(Constraint)**을 추가해 응용
+
 
 #### 참고링크 
 
