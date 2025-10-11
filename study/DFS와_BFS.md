@@ -454,6 +454,45 @@ print(bfs_queue(graph, 1))  # 1 이 시작노드입니다!
 - 다만 재귀 함수로 구현 시 재귀 호출의 깊이가 너무 깊으면 에러가 발생할 수 있다. 이 부분을 신경써야하지만 대부분의 코딩 테스트나 알고리즘 문제에서 백트래킹은 재귀 깊이가 깊지 않은 문제로 출제되므로, 재귀 함수를 사용하는 것이 가장 일반적인 해결책이다.
 
 
+```
+# N과 M (1) - 1부터 N까지 중복 없이 M개를 고른 순열 구하기 예시
+N = 4  # 전체 원소의 개수
+M = 2  # 선택할 원소의 개수
+
+# 결과 저장을 위한 리스트
+result = []
+# 방문 여부를 체크하는 배열 (순열에서 중복 방지용)
+visited = [False] * (N + 1)  # 1부터 N까지 사용하므로 크기를 N+1로 설정
+
+def backtracking():
+    # 1. 종료 조건 (Base Case): M개의 원소를 모두 선택했을 때
+    if len(result) == M:
+        print(' '.join(map(str, result)))
+        return
+
+    # 2. 재귀 호출 (Recursive Call)
+    for i in range(1, N + 1):  # 1부터 N까지의 숫자 탐색
+        # 3. 유망성 검사 (Constraint Check): 이미 사용한 숫자라면 건너뜀
+        if not visited[i]:
+            # **상태 변경 (Do)**
+            result.append(i)
+            visited[i] = True
+
+            # 다음 단계로 재귀 호출
+            backtracking()
+
+            # **상태 복구 (Undo / Backtrack)**
+            # 현재 경로를 탐색 완료했으므로, 다음 탐색을 위해 상태를 되돌림
+            result.pop()
+            visited[i] = False
+
+# 함수 실행
+# backtracking()
+```
+
+- 가장 대표적인 예제인 **N과 M 문제 (순열/조합 구하기)**를 위한 템플릿 코드. 
+- **재귀 함수 (DFS)**를 사용해 깊이를 탐색하며, 유망한지를 판단하는 **조건(Constraint)**을 추가해 응용
+
 #### 참고링크 
 
 https://velog.io/@seanlion/bfsdfs
