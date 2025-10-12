@@ -4,6 +4,7 @@ from typing import List
 # 서로 다른 정수를 입력받아 가능한 모든 순열을 리턴하라.
 
 # [ 풀이 1 ] DFS를 활용한 순열 생성
+# 순열의 경우 자기 자신을 제외하고 모든 요소를 next_element로 처리
 def permute(nums : List[int]) -> List[List[int]]:
     results = [] # 최종적으로 모든 순열을 저장할 빈 리스트
     prev_elements = [] # 현재까지 선택된 요소들을 임시로 저장하는 리스트, 리스트는 가변적이기 때문에 따로 리스트를 생성해서 값을 백업해두는게 좋다.
