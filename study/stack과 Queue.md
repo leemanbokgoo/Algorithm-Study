@@ -1,6 +1,6 @@
 ## Stack(후입선출, LIFO, Last In First Out)
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495043477-fd252f33-8c77-40c5-9ab6-afc508ef4a0f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250929%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250929T073155Z&X-Amz-Expires=300&X-Amz-Signature=628a7831efc251b72465f377e00391537c1cb8e0915bd7c3243fe501facdce23&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/deed7331-1852-47da-98de-c433ac79c75c)
 
 
 - stakc은 데이터를 쌓아 올리듯이 저장하는 자료구조.
@@ -17,8 +17,7 @@
 
 ## Queue(선입선출, FIFO, First In First Out)
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495043222-b2d4f96c-0075-44b8-a0ee-796ee69ff772.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250929%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250929T073113Z&X-Amz-Expires=300&X-Amz-Signature=7f9b4f6b396db0d09093391f0656102977ffea333c9d83b4a302e56b7feaea6d&X-Amz-SignedHeaders=host)
-
+![image](https://github.com/user-attachments/assets/82838815-ef07-4a0e-a6f6-cbd54e75388a)
 
 - 먼저 들어온 데이터가 먼저 나가는 선입선출 방식의 선형 자료구조.
 - 은행에 가면 먼저 기다린 손님이 먼저 온 순서대로 서비스를 받는 것을 생각하면 됨.

@@ -1,6 +1,8 @@
 ## Heap 자료구조
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495776831-af8cbf14-bd47-44f5-9e2d-26d3770191ea.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T154030Z&X-Amz-Expires=300&X-Amz-Signature=b4c3fdb0b42990a3b4e625f9404224460e1463366b7b2bb9659fe9e91a4f3016&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/79f9fb5b-cdc1-43bf-a5ec-f73ae7c8c9a7)
+
+![image](https://github.com/user-attachments/assets/ca9f7b8d-b085-44c4-846f-c2601db33d17)
 
 - 완전 이진 트리(Complete Binary Tree)으로 구현되어있으며, 우선 큐(Priority Queue)와 같은 최대값 또는 최소값을 빠르게 찾기 위한 자료구조.
 - Heap의 핵심 개념은 각 노드가 부모-자식 간의 우선순위 규칙을 만족한다는 것. 우선 순위의 개념을 큐에 도입한 자료구조다.
@@ -30,7 +32,7 @@
     - 왼쪽 자식: 2 * i + 1
     - 오른쪽 자식: 2 * i + 2
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495782377-c9ef87aa-8196-434e-b42d-a47989de6c58.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T155256Z&X-Amz-Expires=300&X-Amz-Signature=27072b1e1cf7dfae8dc15e72983fcef3ec9c3195cd054dbdc6924398cc722874&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/66cc22f2-1e3a-45a8-9958-b5fc52f4605c)
 
 #### Java에서의 Heap과 메모리 영역
 - 특히 Java에서는 Heap 자료구조와 Heap 메모리 영역은 **완전히 다른 개념**
@@ -67,6 +69,9 @@ H- eap 메모리는 프로그램 실행 중 동적으로 할당되는 메모리 
 
 ## 우선순위 큐 (Priority Queue) 개념
 
+![image](https://github.com/user-attachments/assets/b1356efa-aaa7-41e0-9cec-0d2f4023481c)
+
+
 - Priority Queue(우선순위 큐)는 큐(Queue)의 일종이지만, 일반적인 큐와는 다르게 우선순위에 따라 요소가 처리되는 자료구조.
 - 일반적인 큐는 FIFO(First In, First Out) 구조로, 먼저 들어온 데이터가 먼저 처리되지만 우선순위 큐는 우선순위가 높은 데이터가 먼저 처리된다.
 - 즉, 먼저 들어온 데이터가 아니라, 가장 중요한 데이터가 먼저 처리되는 구조
@@ -97,7 +102,8 @@ H- eap 메모리는 프로그램 실행 중 동적으로 할당되는 메모리 
 1. 힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 삽입한다.
 2. 새로운 노드를 부모 노드들과 교환한다.
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495791047-ba22df23-53bd-405a-8471-326934556c00.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T161459Z&X-Amz-Expires=300&X-Amz-Signature=43b4686e0521eda2e65c311ba7fea02d88a17ba2de32ac34a1a79a1d07e28a46&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/15b31ae9-8c0a-4d92-a9ae-9a1e7e203df0)
+
 ```
 // 최대 힙 삽입
 void insert_max_heap(int x) {
@@ -123,7 +129,7 @@ void insert_max_heap(int x) {
 2. 삭제된 루트 노드에는 힙의 마지막 노드를 가져옴
 3. 힙을 재구성
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495791847-e654557b-19bc-4baa-bd2e-bc551ab6e3c6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T161639Z&X-Amz-Expires=300&X-Amz-Signature=3c83ff127599eb6855bd40fc37f3434c7384783ceed9b2d50831da71962229ab&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/d5ff3a37-5682-420f-b1e1-632f5d2e9d53)
 
 ```
 // 최대 힙 삭제
@@ -167,7 +173,8 @@ int delete_max_heap() {
 - Java에서 제공하는 PriorityQueue는 최소 힙을 기본으로 구현되어 있다. 
     - 최대 힙을 구현하려면 Comparator를 사용하여 우선순위를 반대로 설정해줘야함.
     - 메서드는 Queue 인터페이스의 메서드들을 활용하면 된다.
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495787666-cc97af98-40c8-40bd-b955-dd4aca5b9b66.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T160603Z&X-Amz-Expires=300&X-Amz-Signature=cc872828be0dedd33e344a24c5db75de7447a87802c7dd1ffe22159fb17fee2e&X-Amz-SignedHeaders=host)
+
+![image](https://github.com/user-attachments/assets/7ed38a1d-8cfe-4230-9534-13f8b4e11584)
 
 
 #### 최소 힙 구현

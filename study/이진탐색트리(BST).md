@@ -16,7 +16,7 @@
 - 이진 탐색 트리에 1 ~ 100을 차례대로 넣으면 사향 이진트리를 만들면서 탐색 시 최대 O(n)의 시간이 소요될 수 있다.
 
 #### 일반적인 경우 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/501602776-58e7e0a5-5229-4b4e-8e7e-49af6f3fab75.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251015T160559Z&X-Amz-Expires=300&X-Amz-Signature=0e5ffbf5cdc222de25086eb2b0c4cb427586181cbe9f0e3e49760d868c63323c&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/1752ff53-a12c-49ea-b64c-850bd36e503a)
 - 이진트리의 균형이 적절하다면 이분 탐색과 다를 바가 없으므로 시간복잡도는 O(log n)이다.
 
 ### 이진 탐색 트리의 장점
@@ -38,7 +38,7 @@
 
 ### 중위 순회
 
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/c65cb6cb-1d22-4ec6-b567-4e71432ad9d4)
 
 - 왼쪽 서브트리-노드-오른쪽 서브트리 순으로 순회. 이진 탐색 트리 내 있는 모든 값들을 정렬된 순서대로 읽을 수 있다. 
 - ex ) 1,3,5,7,8,10
@@ -71,7 +71,7 @@ class BinarySearchTree:
     - 트리가 균형 잡힌 경우 ⇒ 탐색 시간 복잡도는 O(log n)
     - 트리가 한쪽으로 치우쳐져 있을 경우 ⇒ 최악의 경우에 탐색 시간 복잡도는 O(n)
 
-(![alt text](image.png))
+![image](https://github.com/user-attachments/assets/850459da-f70d-4f84-8b8d-4651f738182e)
 
 - 위의 BST에서 7을 찾는다고 가정한다. 5 < 7 이므로 왼쪽 서브 트리는 탐색 할 필요가 없다. 다음 단계에서 7 < 8 이므로 우측 서브 트리를 탐색할 필요가 없다. 6 < 7 이므로 우측 탐색을 진행하면 원하는 값을 찾을 수 있다. 
 - 위의 트리 처럼 전체 크기가 8인 트리에서 총 3번 만에 값을 찾을 수 있음으로 log 시간 내로 결과를 찾을 수 있다. 
@@ -105,7 +105,7 @@ class BinarySearchTree:
     - 2. 삽입 값을 루트와 비교. 루트보다 작으면 왼쪽으로 재귀, 크다면 오른쪽으로 재귀 
     - 3. 리프 노드에 도달한 후 리프 노드보다 크다면 오른쪽에 작다면 왼쪽에 삽입한다. 
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/501610993-3306aa38-3cfb-49c1-80ea-ec09833f7c34.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251015T162440Z&X-Amz-Expires=300&X-Amz-Signature=747e81058ac5a44d360691b57b844060e0bb4a8925629d82eaa21295cf8a45b3&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/ac2f7d3f-d3a2-4ed9-9139-4f2d75a1ccbb)
 
 - 아래의 트리에서 3을 삽입하고자 가정해보면 2, 5 사이에 3을 삽입해도 해당 노드끼리는 BST의 성질에 위배되지 않을 수 있겠지만 밑의 서브트리에 대해서는 BST의 속성을 만족하지 못할 수 있다. 
 - 따라서, BST에서의 삽입은 리프 노드에서 이루어져야 한다. 그러므로 BST의 가장 왼쪽의 리프노드는 트리 내 값들 중 최소값이고 오른쪽의 리프 노드는 트리 내 값들 중 최대값이다. 결국 리프 노드 끝까지 **탐색**해야 하므로 시간복잡도는 탐색과 동일하게 트리의 높이가 h라 할 때 O(h)가 된다.
@@ -115,13 +115,13 @@ class BinarySearchTree:
 - 리프 노드 끝에서만 변경이 발생하는 삽입과 달리 삭제는 고려할 점이 더 있다. 특정 값을 삭제하면 다른 노드들과의 대소관계를 유지해야 하는데 단순히 삭제해버리면 곤란한 경우가 있다.
 
 #### 리프 노드를 삭제 할 경우 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/501618600-e7633d8c-b04f-4c07-bfa2-9520361a90a3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251015T164348Z&X-Amz-Expires=300&X-Amz-Signature=770efcf1c7eb597b67eb621cc5343f58c43180882d2e8b6ed15e0536608e7edc&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/c67b1515-66cd-4277-aba8-466c962710fd)
 
 - 3이나 7을 삭제한다고 하면 단순히 삭제해도 전체 트리에 영향을 미치지 않는다.
 
 #### 자식 노드가 1개인 경우 
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/501618417-3dbc4c6a-5dfa-4b22-ab02-66e5722d0d49.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251015T164321Z&X-Amz-Expires=300&X-Amz-Signature=71d57f06f1efd5a909bb1bdfcf3c031ff7a965830d2521b43c903a512bc64360&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/5b0b08f7-c3f1-4366-b5c4-23b905fa4af1)
 
 - 4나 6을 삭제한다고 하자. 아래에 자식 노드로 각각 3, 7을 갖고 있는데 각각에 대해 삭제하고자 하는 노드의 부모 노드에 대해 대소 관계가 유지된다. 
 - 따라서, 노드를 삭제하고 삭제된 노드의 부모노드와 삭제된 노드의 자식 노드를 연결해도 BST의 속성이 유지된다.
@@ -133,7 +133,7 @@ class BinarySearchTree:
 - 삭제 작업 역시 데이터 탐색을 동반하기 때문에 탐색과 동일한 시간 복잡도를 가진다
 
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/501616649-4bdf84a9-af77-481d-b9d7-b4c121782613.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251015T163828Z&X-Amz-Expires=300&X-Amz-Signature=0ee30e1f2c40a9034e05a7b5d247dfe74608b8658234ecb25658835af70f0196&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/860574a3-7cd0-40d3-957e-efb382774396)
 
 
 - 위 트리에서 16을 삭제해야 한다고 가정한다. 그런데 기존처럼 16을 무작정 지우게 되면 13의 위치가 애매해진다. 계산복잡성을 줄이기 위해서는 트리의 요소값들을 크게 바꾸지 않고 원하는 값(16)만 삭제할 수록 좋기때문에 최대한 변경 없는 방법을 고려해야한다. 

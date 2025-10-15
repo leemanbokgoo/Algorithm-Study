@@ -6,7 +6,7 @@
 
 ## DFS(Depth First Search) : 깊이 우선 탐색
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/500144591-09ad4e14-e6b1-4065-b5b6-5c33a00854bb.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251011%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251011T124431Z&X-Amz-Expires=300&X-Amz-Signature=6d214f7a2c93644c1dc8b3288d098930427de35f69c48ccec2a25b9ec7b55a22&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/516db476-f415-4a85-90cb-cf835fb47ba4)
 
 
 - 자료의 검색, 트리나 그래프를 탐색하는 방법. 한 노드를 시작으로 인접한 다른 노드를 재귀적으로 탐색해가고 끝까지 탐색하면 다시 위로 와서 다음을 탐색하여 검색한다.
@@ -30,7 +30,7 @@
 
 - 아래의 그래프를 DFS를 통해 탐색해본다. 
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/499976911-b61494fb-23ea-431f-b971-4bac67745713.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251010%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251010T172218Z&X-Amz-Expires=300&X-Amz-Signature=2e1312d8e60197fc2f0eb8b2ec4f4287fbc363f3dc0c4dddeff2cc3b5126616f&X-Amz-SignedHeaders=host)
+![image]()
 
 - 다음은 재귀 함수를 통해 구현 할 경우 DFS 코드의 동작을 먼저 설명해본 글이다. 
 ```
@@ -288,8 +288,7 @@ print(dfs_stack(graph, 1))  # 1 이 시작노드
 
 ## BFS(Breadth-first search) : 너비 우선 탐색
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/500144792-55bf8dc1-088a-4a75-b78c-bcf185509e72.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251011%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251011T124519Z&X-Amz-Expires=300&X-Amz-Signature=c6cc69fa37fbd37e776ae0b1d2bdebb7d8160bb8ff468658be13541a85815783&X-Amz-SignedHeaders=host)
-
+![image](https://github.com/user-attachments/assets/1760e495-402d-4aa9-bc32-864b99528e6f)
 
 - 한 노드를 시작으로 인접한 모든 정점들을 우선 방문하는 방법으로 더 이상 방문하지 않은 정점이 없을 때까지 방문하지 않은 모든 정점들에 대해서도 **넓이 우선 검색**을 적용한다.
 - 모든 분기되는 수를 다 보고 올 수 있기때문에 BFS 는 최단 경로를 쉽게 찾을 수 있다.그러나, 모든 분기되는 수를 다 저장하다보니 공간을 많이 써야하고, 모든 걸 다 보고 오다보니 시간이 더 오래걸릴 수 있다.
@@ -305,7 +304,7 @@ print(dfs_stack(graph, 1))  # 1 이 시작노드
 
 - 아래의 그래프를 BFS를 통해 탐색해본다. 
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/499976911-b61494fb-23ea-431f-b971-4bac67745713.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251010%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251010T172218Z&X-Amz-Expires=300&X-Amz-Signature=2e1312d8e60197fc2f0eb8b2ec4f4287fbc363f3dc0c4dddeff2cc3b5126616f&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/0091ed42-1aee-4954-9d29-e1cb578f1301")
 
 
 - 큐를 사용하여 BFS를 구현할때 동작 흐름은 다음과 같다. 
@@ -524,3 +523,5 @@ def backtrack_permutation(path):
 #### 참고링크 
 
 https://velog.io/@seanlion/bfsdfs
+
+https://velog.io/@tmdwns1521/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-DFS%EC%99%80-BFS-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0

@@ -1,5 +1,5 @@
 ## 트리 Tree
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495777975-acea13b1-9c41-4ae0-b9be-9ded3289de9d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T154257Z&X-Amz-Expires=300&X-Amz-Signature=fa862f16190f63ab181adfccfff7c317f5cbe023b86a4acd17b03ef54ac81d80&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/0eeae243-0989-4795-90d0-17f9363da7c4)
 
 - 트리는 계층 구조를 표현하는 비선형 자료구조다.
 - 그래프의 일종으로, 트리는 정점(Node)와 간선(Edge)으로 이루어져 있지만, 특별히 사이클이 없는 계층적 구조를 가진다. 
@@ -14,7 +14,7 @@
     - 한 부모 노드는 여러 자식 노드를 가질 수 있지만 한 자식 노드는 반드시 하나의 부모 노드만 가진다. 
 - 형재 노드(Sibling Nodes) : 같은 부모 노드를 공유하는 노드들. 같은 레벨에 있는 노드들이며 서로 인접한 관계로 묶여있다. 위치가 인접하다는 것일뿐 그래프에서의 인접 개념과는 다른 의미다.
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495777287-5a9fa6f0-cd76-4ca4-ae5e-afd1784d284e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T154135Z&X-Amz-Expires=300&X-Amz-Signature=642b3d515a2af9a6cdf6f454e122f2a750f51634e1b5fefdbde7191295e73b93&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/6d5bd514-fd21-4429-a4c2-c625341a785a)
 
 - 서브 트리(SubTree) : 트리 내의 어느 한 노드를 루트로 하는 트리. 트리의 각 노드는 자신을 루트로 하는 하위 트리(서브트리)를 형성할 수 있다. 
 - 깊이(Depth) : 특정 노드가 루트 노드로부터 떨어진 거리를 나타낸다. 루트 노드의 깊이는 0이며, 각 노드의 깊이는 부모 노드의 깊이보다 1만큼 크다. 
@@ -51,7 +51,7 @@
 
 ## Tree와 Graph 비교 
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495778247-9778da8c-5585-4a93-9f09-e727e24f59bf.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T154335Z&X-Amz-Expires=300&X-Amz-Signature=b3fcee92917ec877fecba0c2937c206b32ee72133c373df1e463aa78693de8e3&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/125f843f-3859-48a1-b8a9-b8cc5f967a79)
 
 - 트리는 그래프의 특수한 형태로, 사이클이 없고 명확한 부모-자식 관계를 가진 계층적 구조다.
 - 반면 그래프는 좀 더 일반적인 구조로, 사이클과 다중 경로를 허용하며 네트워크 모델링에 주로 사용된다.
@@ -65,7 +65,7 @@ Tree는 Graph의 특수한 형태로, 사이클이 없고 명확한 부모-자�
 - 트리 중에서도 각 노드가 최대 2개의 자식 노드를 가질떄 이진 트리라고 한다. 최대 2개이기때문에 자식이 없을 수도 있고 한개만 있을 수도 있다. 이때 자식 노드는 각각 왼쪽 자식 노드와 오른쪽 자식 노드로 표현한다.
 - 그래서 같은 루트에 같은 자식 노드 하나를 가지고 있어도. 자식 노드의 위치가 각각 오른쪽과 왼쪽으로 다르다면 두 트리는 서로 다른 트리가 된다. 
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495778836-92daddad-30e2-4e17-ad44-1bf91a598841.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T154446Z&X-Amz-Expires=300&X-Amz-Signature=5ad6fa0020e068f12fb5ac7b0d7f4fc32bcc38b98612f0ca3d51d255d11d70de&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/bb8019c0-ecc3-4493-bf69-33c82d918865)
 
 - 자료를 효율적으로 정렬하고 탐색하는데 유용하다. 
 
@@ -100,7 +100,7 @@ Tree는 Graph의 특수한 형태로, 사이클이 없고 명확한 부모-자�
 - 이진트리 중에서도 마지막 레벨을 제외한 모든 레벨에는 노드들이 가득 차 있고, 마지막 레벨의 노드들도 좌측부터 순서로 들어가있는 형태의 이진트리를 완전 이진트리라고 한다. 노드를 삽입할때 왼쪽부터 차례대로 삽입하는 트리이다. 
 - 노드가 최대 2개의 자식 노드를 갖는 트리 형태의 자료구조로서 마지막 레벨을 제외한 모든 노드는 완전히 채워져 있어야 한다. 또한, 최하단 레벨의 노드는 좌측만 노드가 채워져 있거나 좌측과 우측 모두 채워져 있어야 하며, 노드를 삽입할 때는 최하단 좌측 노드부터 차례대로 삽입해야 합니다(그림 1 참고). 그림 1 우측 트리는 노드 12의 자식 노드가 우측에만 삽입되어 있기 때문에 완전 이진트리라고 할 수 없다.
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/495779139-1e190583-a611-4d22-b2de-3a1acb4c77c5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250930T154522Z&X-Amz-Expires=300&X-Amz-Signature=62b946a2594351cbdf489d27e28d05a899da21cfb3db36c315522d7a8aeaae6c&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/de2d3b9b-2478-435f-b90b-237235fa3c2c)
 
 ### 완전 이진트리 조건
 - 첫째, 마지막 레벨을 제외하고 모든 노드가 채워져있어야한다. 마지막 레벨의 노드는 다 채워져 있을 수도 있고 아닐 수도 있다.
