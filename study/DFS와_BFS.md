@@ -30,7 +30,7 @@
 
 - 아래의 그래프를 DFS를 통해 탐색해본다. 
 
-![image]()
+![image](https://github.com/user-attachments/assets/81dc2f79-acff-4c84-aa45-07feaf8dd542)
 
 - 다음은 재귀 함수를 통해 구현 할 경우 DFS 코드의 동작을 먼저 설명해본 글이다. 
 ```
