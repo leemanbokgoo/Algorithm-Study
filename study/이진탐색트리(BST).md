@@ -12,7 +12,7 @@
 
 
 #### 운이 나쁜 경우 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/123913164/501602428-2738bd39-416c-4420-bc80-31177d1a7588.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251015T160432Z&X-Amz-Expires=300&X-Amz-Signature=962805cb1c796dd66332158b7408ec5201c53b340d71bf398bcd2fcd19f63200&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/94b583c3-140d-4157-8c23-5edabbcf7aa7)
 - 이진 탐색 트리에 1 ~ 100을 차례대로 넣으면 사향 이진트리를 만들면서 탐색 시 최대 O(n)의 시간이 소요될 수 있다.
 
 #### 일반적인 경우 
