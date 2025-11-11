@@ -1,6 +1,7 @@
 from typing import List
 # ) 카카오 공채 비밀 지도
 # 문제 설명 :  https://tech.kakao.com/posts/344
+
 # 해당 문제는 이진수 연산을 통해 풀이해야하는 문제다.
 # "지도 1 또는 지도 2 중 어느 하나라도 벽인 부분은 전체 지도에서도 벽이다. 지도 1과 지도 2에서 모두 공백인 부분은 전체 지도에서도 공백이다." -> 이부분은 OR 연산을 설명하고 있다.
 # "암호화된 배열은 지도의 각 가로줄에서 벽 부분을 $1$, 공백 부분을 $0$으로 부호화했을 때 얻어지는 이진수에 해당하는 값의 배열이다."
@@ -61,3 +62,41 @@ if __name__ == "__main__":
     print("=============================================")
     print(solution(n2, arr2_1, arr2_2))
     print('["######", "###  #", "##  ##", " ####  ", "  #####", "### # "]')
+
+## 다른 버전의 정답들.
+
+# https://velog.io/@kysung95/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-2018-KAKAO-BLIND-RECRUITMENT-%EB%B9%84%EB%B0%80%EC%A7%80%EB%8F%84
+def solution2(n, arr1, arr2):
+    answer = []
+
+    for i in range(n):
+
+        word = ""
+
+        arr1_binary = bin(arr1[i])[2:].rjust(n, "0")
+        arr2_binary = bin(arr2[i])[2:].rjust(n, "0")
+
+        for j in range(n):
+            # int(arr1_binary[j])와 int(arr2_binary[j])는 각각 두 이진수의 같은 위치에 있는 비트(0 또는 1)를 정수로 변환한다.
+            # int(...) or int(...): Python에서 or 연산자는 불리언 로직을 따르며, 이 경우 두 정수 중 하나라도 1이면 결과는 1이 된다.
+            # 비트 OR 연산의 결과와 동일하다.
+            if str( int(arr1_binary[j]) or int(arr2_binary[j]) ) == "0":
+                word += " "
+            else:
+                word += "#"
+
+        answer.append(word)
+
+    return answer
+
+# https://velog.io/@soopy368/Python-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4
+def solution3(n, arr1, arr2):
+    answer = []
+
+    for n1, n2 in list(zip(arr1, arr2)):
+        bin_str = bin(n1 | n2)[2:].zfill(n)
+        bin_str = bin_str.replace('1', '#')
+        bin_str = bin_str.replace('0', ' ')
+        answer.append(bin_str)
+
+    return answer
