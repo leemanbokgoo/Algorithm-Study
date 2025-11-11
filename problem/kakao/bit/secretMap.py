@@ -1,5 +1,5 @@
 from typing import List
-# ) 카카오 공채 비밀 지도
+# 카카오 공채) 비밀 지도
 # 문제 설명 :  https://tech.kakao.com/posts/344
 
 # 해당 문제는 이진수 연산을 통해 풀이해야하는 문제다.
