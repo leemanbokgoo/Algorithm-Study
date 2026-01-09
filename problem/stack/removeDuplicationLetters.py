@@ -18,7 +18,6 @@ def removeDuplicationLetters( s: str )-> str:
         suffix = s[s.index(char):]
 
         # 둘다 중복을 제거 했을떄 위에서 자른 문자열과 s가 동일하다면
-        #
         if set(s) == set(suffix):
             # if문을 통과한 char은 가장 사전적으로 작은 문자.
             # suffix.replace(char, '') : 남은 문자열(suffix)에서 방금 선택한 char를 모두 제거한다. ( char은 이미 사용했으므로 중복 제거)
@@ -46,10 +45,12 @@ def removeDuplicationLetters2( s: str )-> str:
         if char in seen:
             continue
 
+        # 사전 순으로 가장 작은 결과를 만들기 위한 부분
         # stack[-1]은 스택(List)의 가장 마지막에 추가된 요소
-        # char < stack[-1]: 현재 처리 중인 문자(char)가 스택의 최상단 문자보다 사전적으로 더 작다는 의미.
-        # counter[stack[-1]] > 0 : 현재 스택의 최상단 문자(stack[-1])가 처리 중인 문자(char) 이후에도 문자열에 또다시 남아있다는 의미
-        # 지금 더 작은 문자(char)가 들어왔고, 스택에 있는 더 큰 문자(stack[-1])는 뒤에 다시 나타날 예정이니, 나중에 다시 주워 담을 수 있도록 지금 제거하는 것임.
+        # char < stack[-1]: 현재 처리 중인 문자(char)가 스택의 최상단 문자보다 사전적으로 더 앞설 때(더 작을때)
+        # counter[stack[-1]] > 0 : 현재 스택의 최상단 문자(stack[-1])가 처리 중인 문자(char) 이후에도 문자열에 또 다시 남아있다는 의미. 즉, counter[stack[-1]]이 또 존재한다면
+        # 지금 더 작은 문자(char)가 들어왔고, 스택의 최상단에 있는 더 큰 문자(stack[-1])는 뒤에 다시 나타날 수 있다는 뜻.
+        # 그러모르 현재 스택의 최상단에 있는 문자열을 제거
         while stack and char < stack[-1] and counter[stack[-1]] > 0:
             # 스택의 최상단 문자(stack.pop())를 제거하고, seen 집합에서도 제거
             seen.remove(stack.pop())
